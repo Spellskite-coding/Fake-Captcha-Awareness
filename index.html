@@ -8,7 +8,7 @@
   <title>Site de sensibilisation : le piège du faux « Je ne suis pas un robot » (ClickFix)</title>
   <meta name="description" content="Site de sensibilisation gratuit et sans danger. Apprenez à reconnaître les faux captchas qui demandent d'appuyer sur des touches du clavier (ClickFix, FileFix). Aucune commande, rien n'est copié, rien n'est installé.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%8B%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body data-os="windows">
 
@@ -130,8 +130,8 @@
   <!-- ============ RÈGLE D'OR ============ -->
   <section id="regle" class="section section-regle" aria-labelledby="regle-titre">
     <div class="contenu">
-      <h2 id="regle-titre" class="regle-texte">Un vrai site ne vous demande jamais d'appuyer sur des touches du clavier pour prouver que vous êtes humain.</h2>
-      <p class="regle-suite">Si une page vous demande de copier, coller ou ouvrir quelque chose sur votre ordinateur : fermez-la et appelez un proche.</p>
+      <h2 id="regle-titre" class="regle-texte">Un vrai site ne vous demande jamais d'appuyer sur des touches du clavier ni de coller quelque chose dans votre ordinateur, quelle que soit la raison.</h2>
+      <p class="regle-suite">Captcha, erreur à corriger, mise à jour, problème de micro : si une page vous le demande, fermez-la et appelez un proche.</p>
       <div class="touches-interdites" aria-label="Combinaisons de touches demandées par les pièges">
         <span><kbd>⊞ Windows</kbd> + <kbd>R</kbd></span>
         <span><kbd>⊞ Windows</kbd> + <kbd>X</kbd> puis <kbd>I</kbd></span>
@@ -233,7 +233,7 @@
       <div id="fiche" class="fiche">
         <p class="fiche-panneau" aria-hidden="true">✋</p>
         <p class="fiche-titre">Stop au faux « Je ne suis pas un robot »</p>
-        <p class="fiche-regle">Un vrai site ne me demande <strong>jamais</strong> d'appuyer sur des touches du clavier pour prouver que je suis humain.</p>
+        <p class="fiche-regle">Un vrai site ne me demande <strong>jamais</strong> d'appuyer sur des touches du clavier ni de coller quelque chose dans mon ordinateur.</p>
         <p class="fiche-sous">Si on me demande l'une de ces touches, c'est un piège :</p>
         <p class="fiche-touches"><span class="combo"><kbd>⊞ Windows</kbd> + <kbd>R</kbd></span> <span class="combo"><kbd>⊞ Windows</kbd> + <kbd>X</kbd></span> <span class="combo"><kbd>Ctrl</kbd> + <kbd>V</kbd></span> <span class="combo"><kbd>⌘ Cmd</kbd> + <kbd>V</kbd></span></p>
         <p class="fiche-sous">Ni « Exécuter », ni « Terminal », ni « PowerShell », ni coller dans l'Explorateur de fichiers.</p>
@@ -282,7 +282,7 @@
       <p class="rev-indice-titre" id="rev-indice-titre">🔍 L'indice qui aurait dû vous alerter</p>
       <p id="rev-indice"></p>
     </div>
-    <p class="rev-regle">À retenir : un vrai site ne vous demande jamais d'appuyer sur des touches du clavier pour prouver que vous êtes humain.</p>
+    <p class="rev-regle">À retenir : un vrai site ne vous demande jamais d'appuyer sur des touches du clavier ni de coller quelque chose dans votre ordinateur, quelle que soit la raison : captcha, erreur, mise à jour ou micro.</p>
     <div class="actions">
       <button type="button" class="bouton bouton-principal" id="rev-suivant">Essayer la situation suivante</button>
       <button type="button" class="bouton bouton-secondaire" id="rev-comprendre">Comprendre ce qui se serait passé</button>
@@ -291,6 +291,6 @@
   </div>
 </div>
 
-<script src="app.js"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
