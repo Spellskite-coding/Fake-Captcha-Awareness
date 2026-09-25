@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Site de sensibilisation : le piège du faux « Je ne suis pas un robot » (ClickFix)</title>
+  <meta name="description" content="Site de sensibilisation gratuit et sans danger. Apprenez à reconnaître les faux captchas qui demandent d'appuyer sur des touches du clavier (ClickFix, FileFix). Aucune commande, rien n'est copié, rien n'est installé.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%8B%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-os="windows">
+
+<a class="skip" href="#regle">Aller directement à la règle à retenir</a>
+
+<div class="bandeau-info" role="note">
+  <p>Site de sensibilisation. Tout ce qui est montré ici est une imitation sans danger : rien n'est copié ni installé sur votre appareil.</p>
+  <div class="taille-texte" aria-label="Taille du texte">
+    <button type="button" data-taille="moins" aria-label="Réduire la taille du texte">A−</button>
+    <button type="button" data-taille="plus" aria-label="Agrandir la taille du texte">A+</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="contenu">
+    <p class="hero-panneau" aria-hidden="true">✋</p>
+    <h1>« Je ne suis pas un robot » : le piège où c'est vous qui piratez votre ordinateur</h1>
+    <p class="intro">Des sites piégés affichent une vérification qui ressemble à celles que vous connaissez. Mais au lieu de cocher une case, ils vous demandent d'appuyer sur des touches du clavier. Si vous le faites, vous installez vous-même un programme pirate.</p>
+    <p class="intro">Ici, vous pouvez essayer sans aucun risque. Faites comme si vous étiez sur un site ordinaire.</p>
+    <div class="actions">
+      <a class="bouton bouton-principal" href="#demo">Essayer la démonstration</a>
+      <a class="bouton bouton-secondaire" href="#regle">Voir la règle à retenir</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ DÉMONSTRATION ============ -->
+  <section id="demo" class="section section-demo" aria-labelledby="demo-titre">
+    <div class="contenu">
+      <h2 id="demo-titre">La démonstration</h2>
+      <p>Les pirates utilisent plusieurs déguisements, mais le piège est toujours le même. Essayez-les tous : faites comme si vous étiez vraiment sur ces sites.</p>
+
+      <h3 class="demo-question">Quel ordinateur utilisez-vous ?</h3>
+      <div class="choix-os" role="group" aria-label="Type d'ordinateur">
+        <button type="button" data-os="windows" aria-pressed="true"><span class="os-icone" aria-hidden="true">⊞</span> Windows</button>
+        <button type="button" data-os="mac" aria-pressed="false"><span class="os-icone" aria-hidden="true">⌘</span> Mac</button>
+      </div>
+
+      <h3 class="demo-question">Choisissez une situation</h3>
+      <div class="ligne-progression">
+        <p class="progression" id="progression" aria-live="polite"></p>
+        <button type="button" class="lien-discret" id="remise-zero">Remettre à zéro</button>
+      </div>
+      <div class="cartes-scenarios" id="cartes-scenarios" role="group" aria-label="Situations à essayer"></div>
+    </div>
+
+    <div class="navigateur" id="navigateur" aria-label="Imitation d'une page web piégée">
+      <div class="nav-barre">
+        <span class="nav-points" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="nav-adresse"><span class="cadenas" aria-hidden="true">🔒</span><span id="nav-url">meteo-du-jour-gratuite.site/previsions</span></span>
+      </div>
+      <div class="nav-page">
+        <div class="faux-site" aria-hidden="true">
+          <div class="faux-titre"></div>
+          <div class="faux-ligne"></div><div class="faux-ligne courte"></div>
+          <div class="faux-cartes"><i></i><i></i><i></i></div>
+          <div class="faux-ligne"></div><div class="faux-ligne"></div><div class="faux-ligne courte"></div>
+        </div>
+        <div class="voile">
+          <div id="scene" class="scene" aria-live="polite"></div>
+        </div>
+        <div id="couche-popup" class="couche-popup" hidden></div>
+      </div>
+    </div>
+    <p class="contenu note-demo">Rien de ce que vous faites dans ce cadre n'a d'effet sur votre appareil. Cette page ne touche jamais à votre copier-coller.</p>
+  </section>
+
+  <!-- ============ EXPLICATION ============ -->
+  <section id="explication" class="section" aria-labelledby="expl-titre">
+    <div class="contenu">
+      <h2 id="expl-titre">Ce qui se serait passé sur un vrai site piégé</h2>
+      <ol class="etapes">
+        <li>
+          <h3>Le site copie un programme en cachette</h3>
+          <p>Au moment où vous cliquez (sur la case « Je ne suis pas un robot », sur « Comment corriger », sur « Réparer »…), le site place en secret une commande pirate dans la mémoire du copier-coller de votre ordinateur. Vous ne voyez rien.</p>
+        </li>
+        <li>
+          <h3>Vous la collez vous-même</h3>
+          <p class="si-windows">Les touches <kbd>⊞ Windows</kbd> + <kbd>R</kbd> ouvrent la fenêtre « Exécuter », et <kbd>⊞ Windows</kbd> + <kbd>X</kbd> puis <kbd>I</kbd> ouvrent PowerShell : deux outils de Windows qui servent à lancer des programmes. <kbd>Ctrl</kbd> + <kbd>V</kbd> y colle la commande pirate.</p>
+          <p class="si-mac">Les touches <kbd>⌘ Cmd</kbd> + <kbd>Espace</kbd> puis « Terminal » ouvrent le Terminal, un outil du Mac qui exécute des commandes. <kbd>⌘ Cmd</kbd> + <kbd>V</kbd> y colle la commande pirate.</p>
+          <figure class="fenetre-executer si-windows" aria-label="Imitation de la fenêtre Exécuter de Windows">
+            <div class="fe-titre">Exécuter</div>
+            <div class="fe-corps">
+              <p>Entrez le nom d'un programme, dossier, document ou ressource Internet, et Windows l'ouvrira pour vous.</p>
+              <div class="fe-champ"><span class="fe-cache">commande pirate cachée</span><span class="fe-visible">✅ Je ne suis pas un robot – ID de vérification 48 291</span></div>
+              <div class="fe-boutons"><span>OK</span><span>Annuler</span></div>
+            </div>
+            <figcaption>Astuce des pirates : la fin du texte collé affiche un message rassurant, souvent celui qu'on vous avait annoncé à l'avance, pour que vous ne voyiez pas le début dangereux.</figcaption>
+          </figure>
+          <figure class="fenetre-terminal si-mac" aria-label="Imitation du Terminal sur Mac">
+            <div class="ft-titre"><span class="ft-points" aria-hidden="true"><i></i><i></i><i></i></span>Terminal</div>
+            <div class="ft-corps"><span class="ft-invite">~ %</span> <span class="fe-cache">commande pirate cachée</span> <span class="ft-texte">✅ Je ne suis pas un robot – ID de vérification 48 291</span></div>
+            <figcaption>Astuce des pirates : la fin du texte collé affiche un message rassurant, souvent celui qu'on vous avait annoncé à l'avance, pour que vous ne voyiez pas le début dangereux.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <h3>La touche Entrée lance le piratage</h3>
+          <p class="si-windows">Le programme s'installe. Il peut voler vos mots de passe enregistrés, accéder à votre banque en ligne et à vos mails, ou laisser les pirates prendre le contrôle de l'ordinateur.</p>
+          <p class="si-mac">Le programme s'installe. Il affiche souvent une fausse fenêtre qui demande le mot de passe de votre Mac, puis vole vos mots de passe enregistrés, l'accès à votre banque en ligne et à vos mails.</p>
+        </li>
+      </ol>
+
+      <div class="encadre">
+        <h3>Pourquoi ça marche si bien</h3>
+        <ul>
+          <li>C'est vous qui lancez le programme : l'antivirus a beaucoup plus de mal à vous protéger.</li>
+          <li>Le piège apparaît parfois sur de vrais sites connus qui ont été piratés, pas seulement sur des sites louches.</li>
+          <li>Le petit cadenas à côté de l'adresse ne veut pas dire que le site est honnête. Les sites piégés en ont un aussi.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RÈGLE D'OR ============ -->
+  <section id="regle" class="section section-regle" aria-labelledby="regle-titre">
+    <div class="contenu">
+      <h2 id="regle-titre" class="regle-texte">Un vrai site ne vous demande jamais d'appuyer sur des touches du clavier pour prouver que vous êtes humain.</h2>
+      <p class="regle-suite">Si une page vous demande de copier, coller ou ouvrir quelque chose sur votre ordinateur : fermez-la et appelez un proche.</p>
+      <div class="touches-interdites" aria-label="Combinaisons de touches demandées par les pièges">
+        <span><kbd>⊞ Windows</kbd> + <kbd>R</kbd></span>
+        <span><kbd>⊞ Windows</kbd> + <kbd>X</kbd> puis <kbd>I</kbd></span>
+        <span><kbd>Ctrl</kbd> + <kbd>V</kbd></span>
+        <span><kbd>⌘ Cmd</kbd> + <kbd>V</kbd></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RECONNAÎTRE ============ -->
+  <section id="reconnaitre" class="section" aria-labelledby="reco-titre">
+    <div class="contenu">
+      <h2 id="reco-titre">Faire la différence</h2>
+      <div class="comparaison">
+        <div class="colonne colonne-ok">
+          <h3>Un vrai « Je ne suis pas un robot »</h3>
+          <p>Tout se passe dans la page :</p>
+          <ul>
+            <li>cocher une case ;</li>
+            <li>cliquer sur des images (feux, vélos, passages piétons) ;</li>
+            <li>recopier des lettres déformées ;</li>
+            <li>faire glisser une pièce de puzzle.</li>
+          </ul>
+        </div>
+        <div class="colonne colonne-piege">
+          <h3>Un piège</h3>
+          <p>On vous fait sortir de la page :</p>
+          <ul>
+            <li>appuyer sur la touche Windows avec une autre touche ;</li>
+            <li>ouvrir « Exécuter », « Terminal » ou « PowerShell » ;</li>
+            <li>coller quelque chose dans la barre d'adresse de l'Explorateur de fichiers ;</li>
+            <li>cliquer sur un bouton « Copier » pour « vérifier » ;</li>
+            <li>vous annoncer à l'avance le message que vous allez voir s'afficher sur votre ordinateur, pour vous rassurer ;</li>
+            <li>soi-disant « réparer » une page qui s'affiche mal, un micro qui ne marche pas en visio, ou « mettre à jour » le navigateur de cette façon.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section id="quiz" class="section section-quiz" aria-labelledby="quiz-titre">
+    <div class="contenu">
+      <h2 id="quiz-titre">Petit test : normal ou piège ?</h2>
+      <p>Pour chaque message, choisissez votre réponse. Il n'y a aucun piège caché dans ce test.</p>
+      <div id="quiz-zone" class="quiz-zone"></div>
+    </div>
+  </section>
+
+  <!-- ============ SE PROTÉGER ============ -->
+  <section id="proteger" class="section" aria-labelledby="prot-titre">
+    <div class="contenu">
+      <h2 id="prot-titre">Se protéger au quotidien</h2>
+      <ul class="conseils">
+        <li><strong>Dans le doute, fermez la page.</strong> Si elle refuse de se fermer, fermez le navigateur. Si ça ne marche toujours pas, éteignez l'ordinateur.</li>
+        <li><strong>Appelez un proche avant de faire quelque chose d'inhabituel</strong> sur l'ordinateur. Il vaut mieux un appel pour rien qu'un compte vidé.</li>
+        <li><strong>Faites les mises à jour</strong> de Windows, du Mac et du navigateur quand l'ordinateur les propose lui-même, jamais quand une page web vous le demande.</li>
+        <li><strong>Activez la double vérification</strong> (un code reçu par SMS ou sur l'application) pour votre banque et votre messagerie.</li>
+        <li><strong>Méfiez-vous de l'urgence.</strong> « Votre ordinateur est bloqué », « dernière chance », « vérification obligatoire » : les pirates veulent vous faire agir vite, sans réfléchir.</li>
+      </ul>
+
+      <details class="aidant">
+        <summary>Pour l'aidant qui s'occupe de l'ordinateur d'un proche</summary>
+        <ul>
+          <li>Utiliser un compte Windows <strong>standard</strong> au quotidien, pas un compte administrateur.</li>
+          <li>Désactiver la fenêtre Exécuter (<kbd>⊞ Windows</kbd> + <kbd>R</kbd>) : stratégie de groupe « Supprimer le menu Exécuter du menu Démarrer » (Configuration utilisateur › Modèles d'administration › Menu Démarrer et barre des tâches), ou valeur DWORD <code>NoRun = 1</code> dans <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer</code>.</li>
+          <li>Installer un bloqueur de publicités réputé (par exemple uBlock Origin) : beaucoup de pièges arrivent par des publicités.</li>
+          <li>Garder Microsoft Defender actif et à jour, et vérifier que les sauvegardes fonctionnent.</li>
+          <li>Faire la démonstration ci-dessus <em>avec</em> la personne : le souvenir du « STOP » reste bien plus longtemps qu'un conseil.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ DÉJÀ FAIT ============ -->
+  <section id="deja-fait" class="section section-urgence" aria-labelledby="urg-titre">
+    <div class="contenu">
+      <h2 id="urg-titre">J'ai déjà suivi ces étapes sur un vrai site</h2>
+      <p>Pas de panique, mais agissez vite. Dans l'ordre :</p>
+      <ol class="urgence">
+        <li><strong>Coupez internet</strong> sur cet ordinateur : débranchez le câble ou désactivez le Wi-Fi.</li>
+        <li><strong>N'utilisez plus cet ordinateur</strong> pour la banque, les mails ou les achats, tant qu'il n'a pas été vérifié.</li>
+        <li><strong>Appelez un proche de confiance</strong> ou un professionnel.</li>
+        <li><strong>Depuis un autre appareil</strong> (votre téléphone par exemple), changez vos mots de passe : la messagerie d'abord, puis la banque, puis le reste.</li>
+        <li><strong>Prévenez votre banque</strong> et surveillez vos comptes les jours suivants.</li>
+        <li><strong>Faites-vous aider</strong> par le dispositif officiel :
+          <a href="https://www.cybermalveillance.gouv.fr" rel="noopener noreferrer" target="_blank">cybermalveillance.gouv.fr</a>
+          ou <a href="https://www.17cyber.gouv.fr" rel="noopener noreferrer" target="_blank">17Cyber</a>.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FICHE ============ -->
+  <section id="fiche-section" class="section" aria-labelledby="fiche-titre">
+    <div class="contenu">
+      <h2 id="fiche-titre">La fiche à garder près de l'ordinateur</h2>
+      <p>Imprimez-la et posez-la à côté du clavier.</p>
+
+      <div id="fiche" class="fiche">
+        <p class="fiche-panneau" aria-hidden="true">✋</p>
+        <p class="fiche-titre">Stop au faux « Je ne suis pas un robot »</p>
+        <p class="fiche-regle">Un vrai site ne me demande <strong>jamais</strong> d'appuyer sur des touches du clavier pour prouver que je suis humain.</p>
+        <p class="fiche-sous">Si on me demande l'une de ces touches, c'est un piège :</p>
+        <p class="fiche-touches"><span class="combo"><kbd>⊞ Windows</kbd> + <kbd>R</kbd></span> <span class="combo"><kbd>⊞ Windows</kbd> + <kbd>X</kbd></span> <span class="combo"><kbd>Ctrl</kbd> + <kbd>V</kbd></span> <span class="combo"><kbd>⌘ Cmd</kbd> + <kbd>V</kbd></span></p>
+        <p class="fiche-sous">Ni « Exécuter », ni « Terminal », ni « PowerShell », ni coller dans l'Explorateur de fichiers.</p>
+        <p class="fiche-action">Je ferme la page et j'appelle :</p>
+        <p class="fiche-ligne"><span class="sr-only">Nom :</span></p>
+        <p class="fiche-ligne">Tél. :</p>
+        <p class="fiche-petit">Si c'est déjà fait : je coupe internet et je me fais aider sur cybermalveillance.gouv.fr</p>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="bouton bouton-principal" id="imprimer">Imprimer la fiche</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARTAGER ============ -->
+  <section id="partager" class="section section-partage" aria-labelledby="part-titre">
+    <div class="contenu">
+      <h2 id="part-titre">Envoyez ce site à vos proches</h2>
+      <p>Une personne prévenue, c'est une personne protégée. Partagez-le avec ceux qui pourraient tomber dans le piège.</p>
+      <div class="actions">
+        <button type="button" class="bouton bouton-principal cache" id="partage-natif">Partager</button>
+        <a class="bouton bouton-secondaire" id="partage-whatsapp" href="#" rel="noopener noreferrer" target="_blank">Envoyer par WhatsApp</a>
+        <a class="bouton bouton-secondaire" id="partage-mail" href="#">Envoyer par e-mail</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="contenu">
+    <p>Site de sensibilisation indépendant et open source. Aucun cookie, aucun traceur, aucune donnée collectée, aucun contenu chargé depuis un autre site.</p>
+    <p>Cette page n'accède jamais à votre copier-coller et ne contient aucune commande.</p>
+  </div>
+</footer>
+
+<!-- ============ RÉVÉLATION ============ -->
+<div id="revelation" class="revelation" role="dialog" aria-modal="true" aria-labelledby="rev-titre" hidden>
+  <div class="rev-boite" tabindex="-1">
+    <div class="rev-panneau" aria-hidden="true"><span>STOP</span></div>
+    <h2 id="rev-titre">Vous venez de tomber dans le piège.</h2>
+    <p class="rev-rassure">Ici, rien ne s'est passé : rien n'a été copié, rien n'a été installé. Votre appareil ne risque rien.</p>
+    <p id="rev-explication"></p>
+    <div class="rev-indice">
+      <p class="rev-indice-titre">🔍 L'indice qui aurait dû vous alerter</p>
+      <p id="rev-indice"></p>
+    </div>
+    <p class="rev-regle">À retenir : un vrai site ne vous demande jamais d'appuyer sur des touches du clavier pour prouver que vous êtes humain.</p>
+    <div class="actions">
+      <button type="button" class="bouton bouton-principal" id="rev-suivant">Essayer la situation suivante</button>
+      <button type="button" class="bouton bouton-secondaire" id="rev-comprendre">Comprendre ce qui se serait passé</button>
+      <button type="button" class="bouton bouton-secondaire" id="rev-recommencer">Recommencer cette situation</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
