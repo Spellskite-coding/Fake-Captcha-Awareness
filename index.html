@@ -57,10 +57,13 @@
       <div class="cartes-scenarios" id="cartes-scenarios" role="group" aria-label="Situations à essayer"></div>
     </div>
 
+    <p class="contenu astuce-fermer">Vous n'êtes jamais obligé de suivre ce qu'une page vous demande. Comme sur un vrai site, vous pouvez la fermer avec la croix <span class="croix-mini" aria-hidden="true">✕</span> en haut à droite du cadre.</p>
+
     <div class="navigateur" id="navigateur" aria-label="Imitation d'une page web piégée">
       <div class="nav-barre">
         <span class="nav-points" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="nav-adresse"><span class="cadenas" aria-hidden="true">🔒</span><span id="nav-url">meteo-du-jour-gratuite.site/previsions</span></span>
+        <button type="button" class="nav-fermer" id="fermer-page" aria-label="Fermer cette page" title="Fermer cette page"><span aria-hidden="true">✕</span><span class="nav-fermer-texte">Fermer</span></button>
       </div>
       <div class="nav-page">
         <div class="faux-site" aria-hidden="true">
@@ -271,12 +274,12 @@
 <!-- ============ RÉVÉLATION ============ -->
 <div id="revelation" class="revelation" role="dialog" aria-modal="true" aria-labelledby="rev-titre" hidden>
   <div class="rev-boite" tabindex="-1">
-    <div class="rev-panneau" aria-hidden="true"><span>STOP</span></div>
+    <div class="rev-panneau" aria-hidden="true"><span id="rev-panneau-texte">STOP</span></div>
     <h2 id="rev-titre">Vous venez de tomber dans le piège.</h2>
-    <p class="rev-rassure">Ici, rien ne s'est passé : rien n'a été copié, rien n'a été installé. Votre appareil ne risque rien.</p>
+    <p class="rev-rassure" id="rev-rassure">Ici, rien ne s'est passé : rien n'a été copié, rien n'a été installé. Votre appareil ne risque rien.</p>
     <p id="rev-explication"></p>
     <div class="rev-indice">
-      <p class="rev-indice-titre">🔍 L'indice qui aurait dû vous alerter</p>
+      <p class="rev-indice-titre" id="rev-indice-titre">🔍 L'indice qui aurait dû vous alerter</p>
       <p id="rev-indice"></p>
     </div>
     <p class="rev-regle">À retenir : un vrai site ne vous demande jamais d'appuyer sur des touches du clavier pour prouver que vous êtes humain.</p>

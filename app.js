@@ -166,7 +166,7 @@
   var SCENARIOS = [
     /* ===== WINDOWS ===== */
     {
-      id: 'win-captcha', os: 'windows', icone: '🤖',
+      id: 'win-captcha', but: 'Cette page voulait vous faire ouvrir la fenêtre «\u00a0Exécuter\u00a0» de Windows et y coller une commande pirate, copiée en secret dès que vous auriez coché la case.', os: 'windows', icone: '🤖',
       titre: '«\u00a0Je ne suis pas un robot\u00a0»', sous: 'Une page de vérification de sécurité',
       url: 'meteo-du-jour-gratuite.site/previsions', mode: 'plein', chargement: true,
       fond: function () { return interstitiel('meteo-du-jour-gratuite.site'); },
@@ -180,7 +180,7 @@
       indice: 'On vous demandait d\'appuyer sur la touche Windows. Un vrai «\u00a0Je ne suis pas un robot\u00a0» se passe entièrement dans la page : on coche, on clique sur des images, et c\'est tout.'
     },
     {
-      id: 'win-powershell', os: 'windows', icone: '☑️',
+      id: 'win-powershell', but: 'Cette page voulait vous faire ouvrir PowerShell, l\'outil le plus puissant de Windows, et y coller une commande pirate copiée en secret.', os: 'windows', icone: '☑️',
       titre: 'La case à cocher', sous: '«\u00a0Je ne suis pas un robot\u00a0», autre version',
       url: 'series-streaming-hd.site/saison-2/episode-4', mode: 'case', chargement: true,
       fond: boiteCase,
@@ -193,7 +193,7 @@
       indice: 'On vous demandait d\'ouvrir PowerShell ou le Terminal. Aucun site n\'a besoin de ces outils pour vérifier que vous êtes humain.'
     },
     {
-      id: 'win-erreur', os: 'windows', icone: '⚠️',
+      id: 'win-erreur', but: 'Cette page faisait semblant d\'être en panne pour vous faire ouvrir PowerShell et y coller un faux «\u00a0correctif\u00a0», qui était en réalité une commande pirate.', os: 'windows', icone: '⚠️',
       titre: 'La page s\'affiche mal', sous: 'Une fausse erreur «\u00a0à corriger\u00a0»',
       url: 'actu-regionale-info.site/article/8841', mode: 'plein', chargement: false,
       fond: pageErreur,
@@ -206,7 +206,7 @@
       indice: 'Une page qui s\'affiche mal n\'est jamais votre problème à réparer. On ferme la page, c\'est tout. Aucun site ne vous demande d\'ouvrir PowerShell pour «\u00a0corriger\u00a0» son affichage.'
     },
     {
-      id: 'win-maj', os: 'windows', icone: '🔄',
+      id: 'win-maj', but: 'Il n\'y avait aucune mise à jour : cette page voulait vous faire ouvrir la fenêtre «\u00a0Exécuter\u00a0» et y lancer une commande pirate.', os: 'windows', icone: '🔄',
       titre: 'Le navigateur pas à jour', sous: 'Une fausse mise à jour urgente',
       url: 'telechargement-rapide.site/lecture', mode: 'plein', chargement: false,
       fond: pageMiseAJour,
@@ -218,7 +218,7 @@
       indice: 'Un site web ne met jamais à jour votre navigateur. Les vraies mises à jour se font toutes seules, ou depuis les réglages du navigateur, jamais en appuyant sur des touches.'
     },
     {
-      id: 'win-visio', os: 'windows', icone: '🎙️',
+      id: 'win-visio', but: 'Cette fausse réunion voulait vous faire ouvrir PowerShell pour «\u00a0réparer\u00a0» votre micro, et y coller une commande pirate.', os: 'windows', icone: '🎙️',
       titre: 'La visio sans son', sous: 'Un faux problème de micro en réunion',
       url: 'visio-reunion.site/salle/kfj-83q', mode: 'plein', chargement: false,
       fond: function () { return pageVisio('powershell'); },
@@ -230,7 +230,7 @@
       indice: 'Une visio n\'a jamais besoin que vous ouvriez PowerShell. Un vrai problème de micro se règle dans les réglages de la visio, ou en cliquant sur «\u00a0Autoriser\u00a0» quand le navigateur le demande.'
     },
     {
-      id: 'win-fichier', os: 'windows', icone: '📄',
+      id: 'win-fichier', but: 'Ce faux document voulait vous faire coller une commande pirate dans la barre d\'adresse de l\'Explorateur de fichiers, cachée derrière un faux chemin de fichier.', os: 'windows', icone: '📄',
       titre: 'Le document partagé', sous: 'Un faux fichier à ouvrir',
       url: 'docpartage-cloud.site/s/7Q2K', mode: 'plein', direct: true,
       fond: pagePartage,
@@ -243,7 +243,7 @@
 
     /* ===== MAC ===== */
     {
-      id: 'mac-captcha', os: 'mac', icone: '🤖',
+      id: 'mac-captcha', but: 'Cette page voulait vous faire ouvrir le Terminal de votre Mac et y coller une commande pirate, copiée en secret dès que vous auriez coché la case.', os: 'mac', icone: '🤖',
       titre: '«\u00a0Je ne suis pas un robot\u00a0»', sous: 'Une page de vérification de sécurité',
       url: 'recettes-faciles-maison.site/tartes', mode: 'plein', chargement: true,
       fond: function () { return interstitiel('recettes-faciles-maison.site'); },
@@ -256,7 +256,7 @@
       indice: 'On vous envoyait dans le Terminal. Aucun site n\'a besoin que vous ouvriez le Terminal pour vérifier que vous êtes humain.'
     },
     {
-      id: 'mac-erreur', os: 'mac', icone: '⚠️',
+      id: 'mac-erreur', but: 'Cette page faisait semblant d\'être en panne pour vous faire ouvrir le Terminal et y coller un faux «\u00a0correctif\u00a0», qui était en réalité une commande pirate.', os: 'mac', icone: '⚠️',
       titre: 'La page s\'affiche mal', sous: 'Une fausse erreur «\u00a0à corriger\u00a0»',
       url: 'actu-regionale-info.site/article/8841', mode: 'plein', chargement: false,
       fond: pageErreur,
@@ -269,7 +269,7 @@
       indice: 'Une page qui s\'affiche mal n\'est jamais votre problème à réparer. On ferme la page. Aucun site ne vous demande d\'ouvrir le Terminal pour «\u00a0corriger\u00a0» son affichage.'
     },
     {
-      id: 'mac-visio', os: 'mac', icone: '🎙️',
+      id: 'mac-visio', but: 'Cette fausse réunion voulait vous faire ouvrir le Terminal pour «\u00a0réparer\u00a0» votre micro, et y coller une commande pirate.', os: 'mac', icone: '🎙️',
       titre: 'La visio sans son', sous: 'Un faux problème de micro en réunion',
       url: 'visio-reunion.site/salle/kfj-83q', mode: 'plein', chargement: false,
       fond: function () { return pageVisio('terminal'); },
@@ -294,8 +294,18 @@
   function lire(cle) { try { return localStorage.getItem(cle); } catch (e) { return null; } }
   function ecrire(cle, val) { try { localStorage.setItem(cle, val); } catch (e) { /* ignoré */ } }
 
+  // reussis[id] = 'piege' (la personne a suivi les instructions) ou 'dejoue' (elle a fermé la page)
   var reussis = {};
-  (lire('situations-reperees') || '').split(',').forEach(function (id) { if (id) reussis[id] = true; });
+  (lire('situations-reperees') || '').split(',').forEach(function (v) {
+    if (!v) return;
+    var p = v.split(':');
+    reussis[p[0]] = p[1] === 'd' ? 'dejoue' : 'piege';
+  });
+  function sauverProgression() {
+    ecrire('situations-reperees', Object.keys(reussis).map(function (id) {
+      return reussis[id] === 'dejoue' ? id + ':d' : id;
+    }).join(','));
+  }
 
   function detecterOS() {
     var memo = lire('systeme');
@@ -327,12 +337,12 @@
     liste.forEach(function (sc) {
       var b = document.createElement('button');
       b.type = 'button';
-      b.className = 'carte-scenario' + (reussis[sc.id] ? ' reussie' : '');
+      b.className = 'carte-scenario' + (reussis[sc.id] ? ' faite etat-' + reussis[sc.id] : '');
       b.setAttribute('aria-pressed', sc.id === actif.id ? 'true' : 'false');
       b.setAttribute('data-id', sc.id);
       b.innerHTML = '<span class="cs-icone" aria-hidden="true">' + sc.icone + '</span>' +
         '<span class="cs-texte"><span class="cs-titre">' + sc.titre + '</span><span class="cs-sous">' + sc.sous + '</span></span>' +
-        '<span class="cs-etat">' + (reussis[sc.id] ? '✓ Repéré' : '') + '</span>';
+        '<span class="cs-etat">' + (reussis[sc.id] === 'dejoue' ? '✓ Déjoué' : reussis[sc.id] === 'piege' ? '✋ Piégé' : '') + '</span>';
       b.addEventListener('click', function () {
         choisir(sc.id);
         $('#navigateur').scrollIntoView({ block: 'start' });
@@ -340,9 +350,15 @@
       zoneCartes.appendChild(b);
     });
     var n = liste.filter(function (sc) { return reussis[sc.id]; }).length;
-    progression.textContent = n === liste.length
-      ? 'Bravo, vous avez vu les ' + n + ' pièges ! Faites maintenant le petit test plus bas pour vérifier vos réflexes.'
-      : n + ' piège' + (n > 1 ? 's' : '') + ' vu' + (n > 1 ? 's' : '') + ' sur ' + liste.length;
+    var d = liste.filter(function (sc) { return reussis[sc.id] === 'dejoue'; }).length;
+    var total = liste.length;
+    if (n === total && d === total) {
+      progression.textContent = 'Parfait : vous avez déjoué les ' + total + ' pièges en fermant la page. Faites maintenant le petit test plus bas.';
+    } else if (n === total) {
+      progression.textContent = 'Vous avez vu les ' + total + ' pièges, dont ' + d + ' déjoué' + (d > 1 ? 's' : '') + '. Recommencez ceux où vous avez été piégé, puis faites le petit test plus bas.';
+    } else {
+      progression.textContent = n + ' situation' + (n > 1 ? 's' : '') + ' sur ' + total + ' · ' + d + ' piège' + (d > 1 ? 's' : '') + ' déjoué' + (d > 1 ? 's' : '');
+    }
     progression.classList.toggle('complet', n === liste.length);
   }
 
@@ -422,17 +438,36 @@
     return null;
   }
 
-  function reveler() {
-    if (!etapePiegeVisible) return;
-    etapePiegeVisible = false;
-    reussis[actif.id] = true;
-    ecrire('situations-reperees', Object.keys(reussis).join(','));
+  var TEXTES_RESULTAT = {
+    piege: {
+      panneau: 'STOP',
+      titre: 'Vous venez de tomber dans le piège.',
+      rassure: 'Ici, rien ne s\'est passé : rien n\'a été copié, rien n\'a été installé. Votre appareil ne risque rien.',
+      indice: '🔍 L\'indice qui aurait dû vous alerter'
+    },
+    dejoue: {
+      panneau: '✓',
+      titre: 'Bon réflexe !',
+      rassure: 'Vous avez fermé la page sans suivre les instructions : c\'est exactement ce qu\'il faut faire. Sur un vrai site piégé, vous auriez été protégé.',
+      indice: '🔍 L\'indice qui trahissait le piège'
+    }
+  };
 
-    $('#rev-explication').textContent = actif.explication;
+  function afficherResultat(resultat) {
+    etapePiegeVisible = false;
+    if (attente) { clearTimeout(attente); attente = null; }
+    reussis[actif.id] = resultat;
+    sauverProgression();
+
+    var t = TEXTES_RESULTAT[resultat];
+    revelation.setAttribute('data-resultat', resultat);
+    $('#rev-panneau-texte').textContent = t.panneau;
+    $('#rev-titre').textContent = t.titre;
+    $('#rev-rassure').textContent = t.rassure;
+    $('#rev-indice-titre').textContent = t.indice;
+    $('#rev-explication').textContent = resultat === 'dejoue' ? actif.but : actif.explication;
     $('#rev-indice').textContent = actif.indice;
-    var suivant = prochainNonVu();
-    var boutonSuivant = $('#rev-suivant');
-    boutonSuivant.hidden = !suivant;
+    $('#rev-suivant').hidden = !prochainNonVu();
 
     dernierFocus = document.activeElement;
     revelation.hidden = false;
@@ -440,6 +475,18 @@
     revelation.scrollTop = 0;
     $('.rev-boite', revelation).focus({ preventScroll: true });
   }
+
+  // La personne a suivi les instructions (clic, clavier, perte de focus)
+  function reveler() {
+    if (!etapePiegeVisible) return;
+    afficherResultat('piege');
+  }
+
+  // La personne a fermé la page : le bon réflexe
+  $('#fermer-page').addEventListener('click', function () {
+    if (!revelation.hidden) return;
+    afficherResultat('dejoue');
+  });
 
   function fermerRevelation(action) {
     revelation.hidden = true;
@@ -519,7 +566,7 @@
   // Remise à zéro de la progression (ordinateur partagé, démonstration à plusieurs personnes)
   $('#remise-zero').addEventListener('click', function () {
     reussis = {};
-    ecrire('situations-reperees', '');
+    sauverProgression();
     choisir(scenariosDe(osActif)[0].id);
   });
 

@@ -640,7 +640,9 @@ body[data-os="mac"] .si-windows { display: none; }
 .cs-titre { display: block; font-weight: bold; color: var(--encre); font-size: .95rem; }
 .cs-sous { display: block; font-size: .8rem; color: #4A5468; }
 .cs-etat { flex-shrink: 0; font-size: .78rem; font-weight: bold; color: var(--vert); }
-.carte-scenario.reussie { border-color: #9BCBB2; }
+.carte-scenario.etat-dejoue { border-color: #9BCBB2; }
+.carte-scenario.etat-piege { border-color: #F0B8B8; }
+.carte-scenario.etat-piege .cs-etat { color: var(--rouge); }
 
 /* --- Fausse erreur d'affichage --- */
 .page-erreur { padding: .6rem .4rem 1rem; font-family: Georgia, "Times New Roman", serif; color: #333; }
@@ -754,3 +756,27 @@ body[data-os="mac"] .si-windows { display: none; }
 .fiche-touches .combo { display: inline-block; white-space: nowrap; margin: 0 .5rem; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Fermer la fausse page : le bon réflexe ---------- */
+.nav-fermer {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: .35rem;
+  min-height: 2.4rem; min-width: 2.4rem; padding: 0 .7rem;
+  font: inherit; font-size: .8rem; font-weight: bold; color: #333;
+  background: #fff; border: 1px solid #B5BDC9; border-radius: .4rem; cursor: pointer;
+}
+.nav-fermer span[aria-hidden] { font-size: 1rem; line-height: 1; }
+.nav-fermer:hover { background: #D93025; border-color: #D93025; color: #fff; }
+@media (max-width: 36rem) { .nav-fermer-texte { display: none; } }
+
+.astuce-fermer { font-size: .88rem; margin-bottom: 1rem; }
+.croix-mini {
+  display: inline-grid; place-items: center; width: 1.5em; height: 1.5em;
+  background: #fff; border: 1px solid #B5BDC9; border-radius: .3em; font-size: .85em; font-weight: bold;
+}
+
+.revelation[data-resultat="dejoue"] .rev-boite { border-color: var(--vert); }
+.revelation[data-resultat="dejoue"] .rev-panneau {
+  background: var(--vert); clip-path: circle(50%); font-size: 2.6rem;
+}
+.revelation[data-resultat="dejoue"] h2 { color: var(--vert); }

@@ -23,7 +23,8 @@ The visitor picks their computer (Windows or Mac, auto-detected), then tries eac
 
 - Captcha pop-ups reproduce the "You will observe and agree: ✅ I am not a robot – Verification ID" social-engineering trick
 - The STOP screen explains what would have happened and shows **the clue that should have raised suspicion** for that specific scenario
-- Progress tracking ("3 traps seen out of 6"), with a "next scenario" button to go through them all
+- A "Close" button in the fake browser bar lets visitors do the right thing: closing the page shows a green "Good reflex!" screen explaining what the page was trying to make them do
+- Progress tracking, with each scenario marked as "Foiled" (page closed) or "Trapped" (instructions followed), and a "next scenario" button to go through them all
 - "Reset" link to clear progress, handy when showing the demo to several people on the same computer
 - The STOP screen is triggered by clicks on the fake buttons, by the trap key combinations (Windows key, Ctrl/Cmd + V, Cmd + Space…) or when the page loses focus after the visitor interacted with it. Zoom shortcuts (Ctrl/Cmd + and −) are deliberately ignored
 
